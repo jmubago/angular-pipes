@@ -102,8 +102,20 @@
                 <td>date:'MMMM - dd'</td>
                 <td>{{fecha | date:'MMMM - dd'}}</td>
             </tr>
+            <tr>
+                <th>{{nombre}}</th>
+                <th>pipe personalizado | replace</th>
+                <th>{{nombre | replace: activar}}</th>
+            </tr>
         </tbody>
     </table>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-12 text-center'>
+                <button (click)='changeTexto()' type="button" class="btn btn-outline-primary">{{buttonText}}</button>
+            </div>
+        </div>
+    </div>
 
     <h4>Slice</h4>
     <ul>
@@ -114,4 +126,7 @@
     <pre>
       {{heroe | json }}
     </pre>
+
+    <h4>Youtube</h4>
+    <iframe width="560" height="315" [src]="video | domSeguro: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
